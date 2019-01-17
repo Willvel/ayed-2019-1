@@ -1,21 +1,20 @@
 import json
-global par, impar
-par = []
-impar =[]
-def app(lis,num):
-    lis.append(num)
+def rec(par,impar,lisa):
+    if len(lisa)>0:
+        if lisa[0]%2==0:
+            par.append(lisa[0])
+            return rec(par,impar,lisa[1:])
+        else:
+            impar.append(lisa[0])
+            return rec(par,impar,lisa[1:])
+    num = par+impar
+    print(num)
+    return num
 # TODO Complete!
 def arrange(numbers):
-    global par,impar
-    if len(numbers) > 1:
-        if numbers[0]%2 == 0:
-            app(par,numbers[0])
-            return(numbers[1:])
-        else:
-            app(impar,numbers[0])
-            return(numbers[1:])
-    numbers = par+impar
-    print(numbers)
+    par = []
+    impar=[]
+    numbers = rec(par,impar,numbers)
     return numbers
 
 

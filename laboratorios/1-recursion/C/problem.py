@@ -3,6 +3,18 @@ import json
 
 # TODO Complete!
 def has_more_vowels(s):
+    let = s[0].lower()
+    if len(s)>1:
+        if let == "a" or let == "e" or let == "i" or let == "o" or let == "u":
+            return 1+has_more_vowels(s[1:])
+        else:
+            return
+
+
+
+        
+        
+        
     return False
 
 
