@@ -1,8 +1,21 @@
 import json
-
-
+global par, impar
+par = []
+impar =[]
+def app(lis,num):
+    lis.append(num)
 # TODO Complete!
 def arrange(numbers):
+    global par,impar
+    if len(numbers) > 1:
+        if numbers[0]%2 == 0:
+            app(par,numbers[0])
+            return(numbers[1:])
+        else:
+            app(impar,numbers[0])
+            return(numbers[1:])
+    numbers = par+impar
+    print(numbers)
     return numbers
 
 
