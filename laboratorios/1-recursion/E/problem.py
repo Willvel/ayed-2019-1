@@ -1,11 +1,22 @@
 import json
-
-
+def supd(n):
+    if len(n)>0:
+        return int(n[0])+supd(n[1:])
+    else:
+        return 0
+def rec(a):
+    if len(a)> 1:
+        a = str(supd(a))
+        return rec(a)
+    else:
+        return a
 # TODO Complete!
 def super_digit(n, k):
-    return 0
-
-
+    print(n,k)
+    num = str(n)*k
+    new = str(supd(num))
+    res = int(rec(new))
+    return res 
 if __name__ == '__main__':
     with open('./data.json') as f:
         tests = json.load(f)
