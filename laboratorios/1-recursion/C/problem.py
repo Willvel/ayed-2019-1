@@ -1,23 +1,23 @@
 import json
-
+def rec(s,con):
+    if len(s)>0:
+        let = s[0].lower()
+        if let == "a" or let == "e" or let == "i" or let == "o" or let == "u":
+            return rec(s[1:],con+1)
+        else:
+            return rec(s[1:],con)
+    else:
+        return con
 
 # TODO Complete!
 def has_more_vowels(s):
-    let = s[0].lower()
-    if len(s)>1:
-        if let == "a" or let == "e" or let == "i" or let == "o" or let == "u":
-            return 1+has_more_vowels(s[1:])
-        else:
-            return
-
-
-
-        
-        
-        
-    return False
-
-
+    con = 0
+    num = int(rec(s,con))
+    nvo = int(len(s)-rec(s,con))
+    if num > nvo:
+        return True
+    else:
+        return False
 if __name__ == '__main__':
     with open('./data.json') as f:
         tests = json.load(f)
