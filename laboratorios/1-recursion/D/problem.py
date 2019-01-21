@@ -1,11 +1,16 @@
 import json
-
-
-# TODO Complete!
+def rec(n):
+    if n == 1:
+        return 1
+    if n == 2:
+        return 2
+    if n == 3:
+        return 4
+    else:
+        return rec(n-1)+rec(n-2)+rec(n-3)
+#TODO Complete!
 def compute_ways(n):
-    return 0
-
-
+    return rec(n)
 if __name__ == '__main__':
     with open('./data.json') as f:
         tests = json.load(f)
